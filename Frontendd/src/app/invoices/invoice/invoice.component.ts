@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Invoice } from 'src/app/shared/invoice';
-import { InvoiceItem } from 'src/app/shared/invoice-item';
 import { InvoiceService } from 'src/app/shared/invoice.service';
 
 @Component({
@@ -30,18 +28,6 @@ export class InvoiceComponent implements OnInit {
          console.log(d);
        })
     })
-
-    // this.sub = this.invSer.getAllInvoices().subscribe(
-    //   data=>{
-    //     if(data!=null)
-    //     {
-    //       //console.log(data);
-    //       this.invoiceList=data;
-    //       //console.log(this.invoiceList[0].invoice_Details);
-    //       //this.myInvDetails.push(this.invoiceList[0].invoice_Details)
-    //     }
-    //   },
-    // )
   }
 
   ngOnDestroy(): void {

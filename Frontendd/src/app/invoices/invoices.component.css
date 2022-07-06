@@ -1,0 +1,7 @@
+#searchContainer{
+    left:0
+}
+#createNewInvoice{
+    margin-left: 5px
+}
+@import "../../styles.css";

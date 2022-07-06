@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rehab\\iTi\\XLAB Task\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj": {}
+    "D:\\Rehab\\iTi\\XLABTask\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\Rehab\\iTi\\XLAB Task\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj": {
+    "D:\\Rehab\\iTi\\XLABTask\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rehab\\iTi\\XLAB Task\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj",
+        "projectUniqueName": "D:\\Rehab\\iTi\\XLABTask\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj",
         "projectName": "InvoicesManagementSystem",
-        "projectPath": "D:\\Rehab\\iTi\\XLAB Task\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj",
+        "projectPath": "D:\\Rehab\\iTi\\XLABTask\\Backend\\InvoicesManagementSystem\\InvoicesManagementSystem.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\Rehab\\iTi\\XLAB Task\\Backend\\InvoicesManagementSystem\\obj\\",
+        "outputPath": "D:\\Rehab\\iTi\\XLABTask\\Backend\\InvoicesManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

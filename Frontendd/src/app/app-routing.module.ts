@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InvoiceItemsComponent } from './invoices/invoice-items/invoice-items.component';
 import { InvoiceComponent } from './invoices/invoice/invoice.component';
+import { InvoicedetailsComponent } from './invoices/invoicedetails/invoicedetails.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
     {path:'',component:InvoiceComponent},
     {path:'edit/:id',component:InvoiceComponent},
     {path:'add',component:InvoiceItemsComponent},
+    {path:'search/:id',component:InvoicedetailsComponent},
   ]}
 ];
 

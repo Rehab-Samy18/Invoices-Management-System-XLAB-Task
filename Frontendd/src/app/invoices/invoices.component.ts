@@ -46,4 +46,8 @@ export class InvoicesComponent implements OnInit {
        })
     })
   }
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+    this.sub2?.unsubscribe();
+  }
 }

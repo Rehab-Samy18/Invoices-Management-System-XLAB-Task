@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchforinvoiceComponent } from './invoices/searchforinvoice/searchforinvoice.component';
 import { SearchforinvoicebyidPipe } from './invoices/Pipes/searchforinvoicebyid.pipe';
+import { InvoicedetailsComponent } from './invoices/invoicedetails/invoicedetails.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchforinvoicebyidPipe } from './invoices/Pipes/searchforinvoicebyid.
     InvoiceItemsComponent,
     SearchforinvoiceComponent,
     SearchforinvoicebyidPipe,
+    InvoicedetailsComponent,
   ],
   imports: [
     BrowserModule,

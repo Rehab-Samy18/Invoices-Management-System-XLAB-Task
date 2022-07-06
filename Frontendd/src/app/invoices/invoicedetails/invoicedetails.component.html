@@ -1,0 +1,46 @@
+<div class="alert alert-success">
+    <h3 class="display-4 text-center">
+        تفاصيل الفاتورة
+      </h3>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>اسم العميل</label>
+                <input name="customerName" #customerName="ngModel" [(ngModel)]="invoice.customerName" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label>تاريخ الفاتورة</label>
+                <input name="invoiceDate" #invoiceDate="ngModel" [(ngModel)]="invoice.invoiceDate" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>كمية الأصناف</label>
+                <input name="invoiceTotalQuantity" #invoiceTotalQuantity="ngModel" [(ngModel)]="invoice.invoiceTotalQuantity" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label>إجمالى الفاتورة</label>
+                <input name="invoiceTotalPrice" #invoiceTotalPrice="ngModel" [(ngModel)]="invoice.invoiceTotalPrice" class="form-control" readonly>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-striped table-borderless table-hover table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>اسم الصنف</th>
+            <th>سعر الصنف</th>
+            <th>كمية الصنف</th>
+            <th>السعر الكلى للصنف</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let item of this.invSer.invoiceItems">
+                <td>{{item.itemName}}</td>
+                <td>{{item.pricePerUnit}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.itemTotalPrice}}</td>
+            </tr>
+        </tbody>
+</table>
+<a class="btn btn-dark ml-1" routerLink="/invoices" id="back">عرض الفواتير</a>
