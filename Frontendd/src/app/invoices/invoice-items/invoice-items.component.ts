@@ -12,16 +12,18 @@ import { InvoiceService } from 'src/app/shared/invoice.service';
 export class InvoiceItemsComponent implements OnInit {
 formData:InvoiceItem=new InvoiceItem();
 formData2:Invoice=new Invoice();
-invoiceItems:InvoiceItem[]=[];
-  constructor(public invSer:InvoiceService) { }
 
-  ngOnInit(): void {
-    
-  }
-  onSubmit(){
-      this.invSer.invoiceItems.push(this.formData);
-  }
-  updateTotal() {
-    this.formData.itemTotalPrice = parseFloat((this.formData.quantity * this.formData.pricePerUnit).toFixed(2));
-  }
+constructor(public invSer:InvoiceService) { }
+
+ngOnInit(): void {
+  
+}
+onSubmit(){
+    this.invSer.invoiceItems.push(this.formData);
+}
+
+//Updating Item total price
+updateTotal() {
+  this.formData.itemTotalPrice = parseFloat((this.formData.quantity * this.formData.pricePerUnit).toFixed(2));
+}
 }

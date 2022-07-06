@@ -9,8 +9,6 @@ import { InvoiceService } from './shared/invoice.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchforinvoiceComponent } from './invoices/searchforinvoice/searchforinvoice.component';
-import { SearchforinvoicebyidPipe } from './invoices/Pipes/searchforinvoicebyid.pipe';
 import { InvoicedetailsComponent } from './invoices/invoicedetails/invoicedetails.component';
 
 @NgModule({
@@ -19,8 +17,6 @@ import { InvoicedetailsComponent } from './invoices/invoicedetails/invoicedetail
     InvoicesComponent,
     InvoiceComponent,
     InvoiceItemsComponent,
-    SearchforinvoiceComponent,
-    SearchforinvoicebyidPipe,
     InvoicedetailsComponent,
   ],
   imports: [

@@ -1,6 +1,7 @@
 <h3 class="display-4 text-center">
     إضافة فاتورة جديدة
 </h3><br>
+
 <form #form="ngForm" autocomplete="off" *ngIf="invSer.formData3">
   <input type="hidden" name="invoiceID" #invoiceID="ngModel" [(ngModel)]="invSer.formData3.invoiceID" class="form-control">
     <div class="row">
@@ -21,33 +22,35 @@
             </div>
         </div>
     </div><br>
-        <!--Invoice Items Table-->
-        <table class="table table-striped table-borderless table-hover table-inverse table-responsive">
-            <thead class="thead-light">
-                <th>الصنف</th>
-                <th>السعر</th>
-                <th>الكمية</th>
-                <th>إجمالى</th>
-                <th>
-                    <a [routerLink]="['/invoice/add']" class="btn btn-outline-success">إضافة صنف</a>
-                </th>
-            </thead><br>
-            <tbody>
-                <tr *ngIf="invSer.invoiceItems.length==0">
-                    <td class="font-italic text-center" colspan="5">
-                        لا توجد أصناف حتى الان
-                    </td>
-                </tr>
-                <tr *ngFor="let item of this.invSer.invoiceItems">
-                    <td>{{item.itemName}}</td>
-                    <td>{{item.pricePerUnit}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{item.itemTotalPrice}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="form-group" id="add-and-view">
-            <br><button type="submit" class="btn btn-success " (click)="onSubmit()">إضافة الفاتورة</button>
-            <a class="btn btn-outline-success" routerLink="/invoices" id="view-invoices">عرض الفواتير</a>
-        </div>
+
+    <!--Invoice Items Table-->
+    <table class="table table-striped table-borderless table-hover table-inverse table-responsive">
+        <thead class="thead-light">
+            <th>الصنف</th>
+            <th>السعر</th>
+            <th>الكمية</th>
+            <th>إجمالى</th>
+            <th>
+                <a [routerLink]="['/invoice/add']" class="btn btn-outline-success">إضافة صنف</a>
+            </th>
+        </thead><br>
+        <tbody>
+            <tr *ngIf="invSer.invoiceItems.length==0">
+                <td class="font-italic text-center" colspan="5">
+                    لا توجد أصناف حتى الان
+                </td>
+            </tr>
+            <tr *ngFor="let item of this.invSer.invoiceItems">
+                <td>{{item.itemName}}</td>
+                <td>{{item.pricePerUnit}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.itemTotalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="form-group" id="add-and-view">
+        <br><button type="submit" class="btn btn-success " (click)="onSubmit()">إضافة الفاتورة</button>
+        <a class="btn btn-outline-success" routerLink="/invoices" id="view-invoices">عرض الفواتير</a>
+    </div>
 </form>

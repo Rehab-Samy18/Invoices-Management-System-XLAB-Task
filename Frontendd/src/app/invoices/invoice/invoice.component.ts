@@ -15,6 +15,7 @@ export class InvoiceComponent implements OnInit {
   sub:Subscription|null=null;
   sub2:Subscription|null=null;
   myInvDetails:any[]=[]
+
   constructor(public invSer:InvoiceService,public router:Router,public ac:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -30,10 +31,7 @@ export class InvoiceComponent implements OnInit {
     })
   }
 
-  ngOnDestroy(): void {
-    this.sub?.unsubscribe();
-    this.sub2?.unsubscribe();
-  }
+  //Calculate Invoice Total Price
   getGrandTotal()
   {
     this.invSer.formData3.invoiceTotalPrice = this.invSer.invoiceItems.reduce((prev,curr)=>{
@@ -41,16 +39,23 @@ export class InvoiceComponent implements OnInit {
     },0)
   }
 
+  //Calculate Invoice Quantity
   getTotalQuantity()
   {
     this.invSer.formData3.invoiceTotalQuantity = this.invSer.invoiceItems.reduce((prev,curr)=>{
       return (+(prev) + +(curr.quantity));
     },0)
   }
+
+  //Create Invoice 
   onSubmit(){
     this.invSer.createInvoice().subscribe(res => {
       console.log(res);
       this.router.navigate(['/invoices'])
     })
+  }
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+    this.sub2?.unsubscribe();
   }
 }

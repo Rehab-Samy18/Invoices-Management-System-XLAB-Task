@@ -6,38 +6,37 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class InvoiceService {
-  baseurl = "https://localhost:7036/api/invoice";
-  baseurl2 = "https://localhost:7036/api/invoice_detail";
+
+  baseurlForInvoice = "https://localhost:7036/api/invoice";
   formData:InvoiceItem=new InvoiceItem();
-  
-  formData2:InvoiceItem=new InvoiceItem();
   formData3:Invoice=new Invoice();
   invoiceItems:InvoiceItem[]=[];
+
   constructor(public http:HttpClient) { }
   ngOnInit(){}
 
+  //Get All Invoices
   getAllInvoices()
   {
-    return this.http.get<Invoice[]>(this.baseurl);
+    return this.http.get<Invoice[]>(this.baseurlForInvoice);
   }
 
-  getAllInvoiceItems()
-  {
-    return this.http.get<InvoiceItem[]>(this.baseurl2);
-  }
-
+  //Create Invoice
   createInvoice(){
     var body = {
       ...this.formData3,
       invoice_Details: this.invoiceItems
     }
-    return this.http.post(this.baseurl,body)
+    return this.http.post(this.baseurlForInvoice,body)
   }
+
+  //Delete Invoice
   deleteInvoice(id:number){
-    return this.http.delete<Invoice>(this.baseurl+"/"+id);
+    return this.http.delete<Invoice>(this.baseurlForInvoice+"/"+id);
   }
   
+  //Get Invoice By ID
   getInvoiceByID(id:number){
-    return this.http.get<any>(this.baseurl+"/"+id)
+    return this.http.get<any>(this.baseurlForInvoice+"/"+id)
   }
 }

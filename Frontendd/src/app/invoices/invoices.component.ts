@@ -15,21 +15,26 @@ export class InvoicesComponent implements OnInit {
   sub:Subscription|null=null;
   sub2:Subscription|null=null;
   ID:any="";
-  invoiceList:Invoice[]=[]
+
   constructor(public invSer:InvoiceService,public router:Router,public ac:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.refreshList();
   }
+
+  //Edit Invoice
   edit(id:number)
   {
     this.router.navigate(['/invoice/edit/' + id])
   }
 
+  //Refresh Invoices List
   refreshList()
   {
     this.invSer.getAllInvoices().subscribe(res => this.invoices = res)
   }
+
+  //Delete Invoice
   onDelete(id:number){
     this.invSer.deleteInvoice(id).subscribe(res=>{
       this.refreshList();
@@ -37,16 +42,6 @@ export class InvoicesComponent implements OnInit {
     })
   }
 
-  onSearch(id:number)
-  {
-    this.sub = this.ac.params.subscribe(a=>{
-      this.sub2 = this.invSer.getInvoiceByID(a['id']).subscribe(d=>{
-         this.invSer.formData3=d.invoice
-         this.invSer.invoiceItems=d.invoiceDetails
-         console.log(d);
-       })
-    })
-  }
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
     this.sub2?.unsubscribe();
