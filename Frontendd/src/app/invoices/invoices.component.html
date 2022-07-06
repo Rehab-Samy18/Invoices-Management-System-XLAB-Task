@@ -3,8 +3,8 @@
             <input  [(ngModel)]="ID" [ngModelOptions]="{standalone: true}" class="form-control" type="search" placeholder="Search Invoice by ID" aria-label="Search">
         </div>
         <div class="col-lg-6">
-            <a class="btn btn-outline-success" [routerLink]="['/invoice/search/',ID]" id="search">Search</a>
-            <a class="btn btn-success" routerLink="/invoice" id="createNewInvoice">إضافة فاتورة جديدة</a>
+            <a class="btn btn-outline-dark" [routerLink]="['/invoice/search/',ID]" id="search">Search</a>
+            <a class="btn btn-dark" routerLink="/invoice" id="createNewInvoice">إضافة فاتورة جديدة</a>
         </div>
 </div><br><br>
 
@@ -25,7 +25,7 @@
             <td class="text-dark">{{item.invoiceTotalQuantity}}</td>
             <td class="text-dark">{{item.invoiceTotalPrice}}</td>
             <td>
-                <a class="btn btn-outline-success" (click)="onDelete(item.invoiceID)">Delete</a>
+                <a class="btn btn-dark" (click)="onDelete(item.invoiceID)">Delete</a>
             </td>
         </tr>
     </tbody>
