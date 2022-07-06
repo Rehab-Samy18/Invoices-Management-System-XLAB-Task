@@ -33,6 +33,7 @@ export class InvoicesComponent implements OnInit {
   onDelete(id:number){
     this.invSer.deleteInvoice(id).subscribe(res=>{
       this.refreshList();
+      this.router.navigateByUrl('/invoices')
     })
   }
 
